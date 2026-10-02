@@ -1,0 +1,19 @@
+def count_code(str):
+    """
+    Return the number of times that the string "code" appears in the given string, 
+    making any letter a wildcard (i.e. "co?e").
+
+    count_code('aaacodebbb') → 1
+    count_code('codexxcode') → 2
+    count_code('cozexxcope') → 2
+    """
+
+    count = 0
+    for i in range(len(str) - 3):
+        if str[i:i+2] == "co" and str[i+3] == "e":
+            count += 1
+    return count
+
+print(count_code('aaacodebbb'))
+print(count_code('codexxcode'))
+print(count_code('cozexxcope'))
