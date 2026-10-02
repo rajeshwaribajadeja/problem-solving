@@ -7,9 +7,17 @@ def make_bricks(small, big, goal):
     make_bricks(3, 1, 9) → False
     make_bricks(3, 2, 10) → True
     """
-    big_used = min(big, goal // 5)
-    rem = goal - big_used * 5
-    return  rem <= small
+    # big_used = min(big, goal // 5)
+    # rem = goal - big_used * 5
+    # return  rem <= small
+    big_req = goal // 5
+    if big_req <= big:
+        rem = goal % 5
+        return rem <= small
+    else:
+        rem = goal - big * 5
+        return rem <= small
+    
 
 print(make_bricks(3, 1, 8))
 print(make_bricks(3, 1, 9))
