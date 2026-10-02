@@ -16,7 +16,6 @@ def end_other(a, b):
     # return a.endswith(b) or b.endswith(a)
     return a[-len(b):] == b or b[-len(a):] == a
 
-    
 
 print(end_other('Hiabc', 'abc'))
 print(end_other('Abc', 'Hiabc'))
