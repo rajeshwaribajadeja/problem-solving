@@ -1,0 +1,24 @@
+def share_digit(a, b):
+    """
+    Given two ints, each in the range 10..99, return true if there is a digit that appears in both numbers, such as the 2 in 12 and 23.
+
+    share_digit(12, 23) → True
+    share_digit(12, 43) → False
+    share_digit(12, 44) → False
+    """
+
+    a_left = a // 10
+    a_right = a % 10
+
+    b_left = b // 10
+    b_right = b % 10
+
+    return (a_left == b_left or
+            a_left == b_right or
+            a_right == b_left or
+            a_right == b_right)
+
+
+print(share_digit(12, 23))
+print(share_digit(12, 43))
+print(share_digit(12, 44))
