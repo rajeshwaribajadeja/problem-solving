@@ -8,10 +8,10 @@ def triangle(rows):
     triangle(2) → 3
     """
 
-    if rows == 0:
-        return 0
+    # if rows == 0:
+    #     return 0
 
-    return rows + triangle(rows - 1)
+    return 0 if rows==0 else rows + triangle(rows - 1)
 
 
 print(triangle(0))
