@@ -30,19 +30,7 @@ def sleep_in(weekday: bool, vacation: bool) -> bool:
     return not weekday or vacation
 
 
-def main() -> None:
-    """Run sample test cases for sleep_in."""
-    test_cases = [
-        (False, False, True),
-        (True, False, False),
-        (False, True, True),
-    ]
-
-    for weekday, vacation, expected in test_cases:
-        result = sleep_in(weekday, vacation)
-        status = "PASS" if result == expected else "FAIL"
-        print(f"sleep_in({weekday}, {vacation}) -> {result} [{status}]")
-
-
 if __name__ == "__main__":
-    main()
+    print(sleep_in(False, False))
+    print(sleep_in(True, False))
+    print(sleep_in(False, True))
