@@ -1,14 +1,34 @@
-def front_back(str):
+"""Warmup-1: front_back problem solution."""
+
+
+def front_back(s: str) -> str:
+    """Exchange the first and last characters of a string.
+
+    Given a string, return a new string where the first and last chars
+    have been exchanged.
+
+    Args:
+        s: The input string.
+
+    Returns:
+        The modified string with first and last characters swapped.
+
+    Complexity:
+        Time Complexity: O(N) where N is the length of the string.
+        Space Complexity: O(N) to store the newly created string.
+
+    Examples:
+        >>> front_back('code')
+        'eodc'
+        >>> front_back('a')
+        'a'
+        >>> front_back('ab')
+        'ba'
     """
-    Given a string, return a new string where the first and last chars have been exchanged.
+    return s if len(s) <= 1 else s[-1] + s[1:-1] + s[0]
 
 
-    front_back('code') → 'eodc'
-    front_back('a') → 'a'
-    front_back('ab') → 'ba'
-    """
-    return str if len(str) <= 1 else str[-1] + str[1:-1] + str[0]
-
-print(front_back('code'))
-print(front_back('a'))
-print(front_back('ab'))
+if __name__ == "__main__":
+    print(front_back("code"))
+    print(front_back("a"))
+    print(front_back("ab"))
