@@ -1,7 +1,7 @@
 """Warmup-2: array_count9 problem solution."""
 
 
-def array_count9(nums: list[int]) -> int:
+def array_count9(nums: list) -> int:
     """Return the number of 9's in the array.
 
     Given an array of ints, return the count of the number 9 appearing
