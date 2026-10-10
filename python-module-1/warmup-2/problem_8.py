@@ -1,7 +1,7 @@
 """Warmup-2: array123 problem solution."""
 
 
-def array123(nums: list[int]) -> bool:
+def array123(nums: list) -> bool:
     """Return True if the sequence of numbers 1, 2, 3 appears in the array.
 
     Given an array of ints, return True if the sequence of numbers
