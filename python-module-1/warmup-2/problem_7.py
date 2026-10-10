@@ -1,7 +1,7 @@
 """Warmup-2: array_front9 problem solution."""
 
 
-def array_front9(nums: list[int]) -> bool:
+def array_front9(nums: list) -> bool:
     """Return True if one of the first 4 elements in the array is a 9.
 
     Given an array of ints, return True if one of the first 4 elements
