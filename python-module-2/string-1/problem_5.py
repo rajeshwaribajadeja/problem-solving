@@ -24,9 +24,9 @@ def endsly(s: str) -> bool:
         >>> endsly("oddy")
         False
     """
-    return str[-2:] == "ly"
+    return s[-2:] == "ly"
 
-
+    
 if __name__ == "__main__":
     print(endsly("oddly"))
     print(endsly("y"))
