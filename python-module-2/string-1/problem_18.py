@@ -27,8 +27,7 @@ def without2(s: str) -> str:
         >>> without2("Hi")
         ''
     """
-    return s[2:] if len(s) >= 2 and s[:2] == s[-2:] else s
-
+    return s[2:] if s[:2] == s[-2:] else s
 
 if __name__ == "__main__":
     print(without2("HelloHe"))
