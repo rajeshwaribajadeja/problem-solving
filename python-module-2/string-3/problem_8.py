@@ -1,33 +1,40 @@
-def mirror_ends(str):
-    """
+"""String-3: mirror_ends problem solution."""
+
+
+def mirror_ends(s: str) -> str:
+    """Return the longest prefix that mirrors the suffix backwards.
+
     Given a string, look for a mirror image (backwards) string at both
     the beginning and end of the given string.
 
-    mirror_ends("abXYZba") → "ab"
-    mirror_ends("abca") → "a"
-    mirror_ends("aba") → "aba"
+    Args:
+        s: The input string.
+
+    Returns:
+        The mirror-matched prefix substring.
+
+    Complexity:
+        Time Complexity: O(N) where N is the length of the string.
+        Space Complexity: O(N) to store the result.
+
+    Examples:
+        >>> mirror_ends("abXYZba")
+        'ab'
+        >>> mirror_ends("abca")
+        'a'
+        >>> mirror_ends("aba")
+        'aba'
     """
-
-    result = ""
-    rev_str = str[::-1]
-    for i in range(len(str)):
-        if str[i] == rev_str[i]:
-            result += str[i]
-
+    result = []
+    for i in range(len(s)):
+        if s[i] == s[-(i + 1)]:
+            result.append(s[i])
         else:
             break
-
-    return result
-
-    # result = ""
-
-    # for i in range(1, len(str) + 1):
-    #     if str[:i] == str[-i:][::-1]:
-    #         result = str[:i]
-
-    # return result
+    return "".join(result)
 
 
-print(mirror_ends("abXYZba"))
-print(mirror_ends("abca"))
-print(mirror_ends("aba"))
+if __name__ == "__main__":
+    print(mirror_ends("abXYZba"))
+    print(mirror_ends("abca"))
+    print(mirror_ends("aba"))
