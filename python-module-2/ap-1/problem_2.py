@@ -25,7 +25,10 @@ def scores_100(scores: list) -> bool:
         >>> scores_100([100, 1, 100, 100])
         True
     """
-    return any(scores[i] == 100 and scores[i + 1] == 100 for i in range(len(scores) - 1))
+    return any(
+        scores[i] == 100 and scores[i + 1] == 100
+        for i in range(len(scores) - 1)
+    )
 
 
 if __name__ == "__main__":
