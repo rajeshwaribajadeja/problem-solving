@@ -4,8 +4,9 @@
 def fix23(nums: list) -> list:
     """Set the 3 to 0 if a 2 is immediately followed by a 3.
 
-    Given an int array length 3, if there is a 2 in the array immediately
-    followed by a 3, set the 3 element to 0. Return the changed array.
+    Given an int array length 3, if there is a 2 in the array
+    immediately followed by a 3, set the 3 element to 0.
+    Return the changed array.
 
     Args:
         nums: A list of 3 integers.
