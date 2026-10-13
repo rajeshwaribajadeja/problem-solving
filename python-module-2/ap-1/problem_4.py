@@ -1,31 +1,50 @@
-def scores_average(scores):
+"""AP-1: scores_average problem solution."""
+
+
+def average(scores: list, start: int, end: int) -> int:
+    """Compute the integer average of elements between start and end indexes.
+
+    Args:
+        scores: A list of integers.
+        start: Starting index (inclusive).
+        end: Ending index (exclusive).
+
+    Returns:
+        The integer average of the slice.
     """
-    Given an array of scores, compute the int average of the first half and the second half, and return whichever is larger. We'll say that the second half begins at index length/2. The array length will be at least 2. To practice decomposition, write a separate helper method
-    int average(int[] scores, int start, int end) { which computes the average of the elements between indexes start..end. Call your helper method twice to implement scoresAverage(). Write your helper method after your scoresAverage() method in the JavaBat text area. Normally you would compute averages with doubles, but here we use ints so the expected results are exact.
-
-
-    scores_average([2, 2, 4, 4]) → 4
-    scores_average([4, 4, 4, 2, 2, 2]) → 4
-    scores_average([3, 4, 5, 1, 2, 3]) → 4
-    """
-
-    mid = len(scores) // 2
-
-    first_average = average(scores, 0, mid)
-    second_average = average(scores, mid, len(scores))
-
-    return max(first_average, second_average)
-
-
-def average(scores, start, end):
-    total = 0
-
-    for i in range(start, end):
-        total += scores[i]
-
+    total = sum(scores[start:end])
     return total // (end - start)
 
 
-print(scores_average([2, 2, 4, 4]))
-print(scores_average([4, 4, 4, 2, 2, 2]))
-print(scores_average([3, 4, 5, 1, 2, 3]))
+def scores_average(scores: list) -> int:
+    """Return the larger of the average of the first and second halves.
+
+    Given an array of scores, compute the integer average of the first half
+    and the second half, and return whichever is larger.
+
+    Args:
+        scores: A list of integers (even length >= 2).
+
+    Returns:
+        The larger average of the two halves.
+
+    Complexity:
+        Time Complexity: O(N) where N is the length of the list.
+        Space Complexity: O(1) auxiliary space.
+
+    Examples:
+        >>> scores_average([2, 2, 4, 4])
+        4
+        >>> scores_average([4, 4, 4, 2, 2, 2])
+        4
+        >>> scores_average([3, 4, 5, 1, 2, 3])
+        4
+    """
+    mid = len(scores) // 2
+    return max(average(scores, 0, mid), average(scores, mid, len(scores)))
+
+
+if __name__ == "__main__":
+    print(scores_average([2, 2, 4, 4]))
+    print(scores_average([4, 4, 4, 2, 2, 2]))
+    print(scores_average([3, 4, 5, 1, 2, 3]))
