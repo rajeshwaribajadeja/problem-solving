@@ -1,16 +1,36 @@
-def last_digit(a, b, c):
+"""Logic-1: last_digit problem solution."""
+
+
+def last_digit(a: int, b: int, c: int) -> bool:
+    """Return True if two or more of the integers have the same rightmost digit.
+
+    Args:
+        a: First non-negative integer.
+        b: Second non-negative integer.
+        c: Third non-negative integer.
+
+    Returns:
+        True if at least two integers share the same last digit, False otherwise.
+
+    Complexity:
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+
+    Examples:
+        >>> last_digit(23, 19, 13)
+        True
+        >>> last_digit(23, 19, 12)
+        False
+        >>> last_digit(23, 19, 3)
+        True
     """
-    Given three ints, a, b, c, return true if two or more of them
-    have the same rightmost digit. The ints are non-negative.
-
-    last_digit(23, 19, 13) → True
-    last_digit(23, 19, 12) → False
-    last_digit(23, 19, 3) → True
-    """
-
-    return a % 10 == b % 10 or a % 10 == c % 10 or b % 10 == c % 10
+    da = a % 10
+    db = b % 10
+    dc = c % 10
+    return da == db or da == dc or db == dc
 
 
-print(last_digit(23, 19, 13))
-print(last_digit(23, 19, 12))
-print(last_digit(23, 19, 3))
+if __name__ == "__main__":
+    print(last_digit(23, 19, 13))
+    print(last_digit(23, 19, 12))
+    print(last_digit(23, 19, 3))
