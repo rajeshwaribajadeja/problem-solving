@@ -1,27 +1,39 @@
-def ten_run(nums):
-    """
-    For each multiple of 10 in the given array, change all the values following it to be that multiple of 10, until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2, 10, 10, 10, 20, 20}.
+"""Array-2: ten_run problem solution."""
 
-    ten_run([2, 10, 3, 4, 20, 5]) → [2, 10, 10, 10, 20, 20]
-    ten_run([10, 1, 20, 2]) → [10, 10, 20, 20]
-    ten_run([10, 1, 9, 20]) → [10, 10, 10, 20]
-    """
 
-    result = []
+def ten_run(nums: list) -> list:
+    """Fill elements following each multiple of 10 with that multiple.
+
+    For each multiple of 10 in the given array, change all values following
+    it to be that multiple of 10, until encountering another multiple of 10.
+
+    Args:
+        nums: A list of integers.
+
+    Returns:
+        The updated list following the ten-run rule.
+
+    Complexity:
+        Time Complexity: O(N) where N is the length of the list.
+        Space Complexity: O(N) auxiliary space.
+
+    Examples:
+        >>> ten_run([2, 10, 3, 4, 20, 5])
+        [2, 10, 10, 10, 20, 20]
+        >>> ten_run([10, 1, 20, 2])
+        [10, 10, 20, 20]
+        >>> ten_run([10, 1, 9, 20])
+        [10, 10, 10, 20]
+    """
     current = None
-
-    for num in nums:
-        if num % 10 == 0:
-            current = num
-
-        if current is not None:
-            result.append(current)
-        else:
-            result.append(num)
-
+    result = []
+    for n in nums:
+        current = n if n % 10 == 0 else current
+        result.append(current if current is not None else n)
     return result
 
 
-print(ten_run([2, 10, 3, 4, 20, 5]))
-print(ten_run([10, 1, 20, 2]))
-print(ten_run([10, 1, 9, 20]))
+if __name__ == "__main__":
+    print(ten_run([2, 10, 3, 4, 20, 5]))
+    print(ten_run([10, 1, 20, 2]))
+    print(ten_run([10, 1, 9, 20]))
