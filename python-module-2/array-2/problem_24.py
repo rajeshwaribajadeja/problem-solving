@@ -1,24 +1,35 @@
-def zero_front(nums):
+"""Array-2: zero_front problem solution."""
+
+
+def zero_front(nums: list) -> list:
+    """Rearrange the array so all zeros are grouped at the start.
+
+    Return an array that contains the exact same numbers as the given
+    array, but rearranged so that all the zeros are grouped at the start
+    of the array. The order of the non-zero numbers does not matter.
+
+    Args:
+        nums: A list of integers.
+
+    Returns:
+        The list with all zeros grouped at the front.
+
+    Complexity:
+        Time Complexity: O(N) where N is the length of the list.
+        Space Complexity: O(N) auxiliary space.
+
+    Examples:
+        >>> zero_front([1, 0, 0, 1])
+        [0, 0, 1, 1]
+        >>> zero_front([0, 1, 1, 0, 1])
+        [0, 0, 1, 1, 1]
+        >>> zero_front([1, 0])
+        [0, 1]
     """
-    Return an array that contains the exact same numbers as the given array, but rearranged so that all the zeros are grouped at the start of the array. The order of the non-zero numbers does not matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}. You may modify and return the given array or make a new array.
-
-    zero_front([1, 0, 0, 1]) → [0, 0, 1, 1]
-    zero_front([0, 1, 1, 0, 1]) → [0, 0, 1, 1, 1]
-    zero_front([1, 0]) → [0, 1]
-    """
-
-    zeros = []
-    non_zeros = []
-
-    for num in nums:
-        if num == 0:
-            zeros.append(num)
-        else:
-            non_zeros.append(num)
-
-    return zeros + non_zeros
+    return [x for x in nums if x == 0] + [x for x in nums if x != 0]
 
 
-print(zero_front([1, 0, 0, 1]))
-print(zero_front([0, 1, 1, 0, 1]))
-print(zero_front([1, 0]))
+if __name__ == "__main__":
+    print(zero_front([1, 0, 0, 1]))
+    print(zero_front([0, 1, 1, 0, 1]))
+    print(zero_front([1, 0]))
