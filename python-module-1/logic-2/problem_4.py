@@ -1,19 +1,48 @@
-"""
-Given 3 int values, a b c, return their sum. However, if any of the values is a teen -- in the range 13..19 inclusive -- then that value counts as 0, except 15 and 16 do not count as a teens. Write a separate helper "def fix_teen(n):"that takes in an int value and returns that value fixed for the teen rule. In this way, you avoid repeating the teen code 3 times (i.e. "decomposition"). Define the helper below and at the same indent level as the main no_teen_sum().
+"""Logic-2: no_teen_sum problem solution."""
 
 
-no_teen_sum(1, 2, 3) → 6
-no_teen_sum(2, 13, 1) → 3
-no_teen_sum(2, 1, 14) → 3
-"""
-def fix_teen(n):
-  if 13 <= n <= 19 and n != 15 and n != 16:
-    return 0
-  return n
+def fix_teen(n: int) -> int:
+    """Adjust teen values in range 13..19 except 15 and 16 to 0.
 
-def no_teen_sum(a, b, c):
+    Args:
+        n: The integer value.
+
+    Returns:
+        0 if n is a non-exempt teen, otherwise n.
+    """
+    return 0 if 13 <= n <= 19 and n not in (15, 16) else n
+
+
+def no_teen_sum(a: int, b: int, c: int) -> int:
+    """Return the sum of 3 integers with teen rules applied.
+
+    Teens in the range 13..19 inclusive count as 0, except 15 and 16
+    which are preserved.
+
+    Args:
+        a: First integer.
+        b: Second integer.
+        c: Third integer.
+
+    Returns:
+        The adjusted sum.
+
+    Complexity:
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+
+    Examples:
+        >>> no_teen_sum(1, 2, 3)
+        6
+        >>> no_teen_sum(2, 13, 1)
+        3
+        >>> no_teen_sum(2, 1, 14)
+        3
+    """
     return fix_teen(a) + fix_teen(b) + fix_teen(c)
 
-print(no_teen_sum(1, 2, 3))
-print(no_teen_sum(2, 13, 1))
-print(no_teen_sum(2, 1, 14))
+
+if __name__ == "__main__":
+    print(no_teen_sum(1, 2, 3))
+    print(no_teen_sum(2, 13, 1))
+    print(no_teen_sum(2, 1, 14))
