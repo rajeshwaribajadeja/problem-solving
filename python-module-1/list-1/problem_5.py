@@ -1,22 +1,31 @@
-def sum3(nums):
+"""List-1: sum3 problem solution."""
+
+
+def sum3(nums: list) -> int:
+    """Return the sum of all elements in an integer array of length 3.
+
+    Args:
+        nums: A list of 3 integers.
+
+    Returns:
+        The sum of the 3 integers.
+
+    Complexity:
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+
+    Examples:
+        >>> sum3([1, 2, 3])
+        6
+        >>> sum3([5, 11, 2])
+        18
+        >>> sum3([7, 0, 0])
+        7
     """
-    Given an array of ints length 3, return the sum of all the elements.
-
-    sum3([1, 2, 3]) → 6
-    sum3([5, 11, 2]) → 18
-    sum3([7, 0, 0]) → 7
-    """
-
-    # return sum(nums) # sum() is a built in function that returns the sum of all the elements in an iterable
-
-    # return nums[0] + nums[1] + nums[2]
-
-    sum = 0
-    for num in nums:
-        sum+=num
-    return sum
+    return sum(nums)
 
 
-print(sum3([1, 2, 3]))
-print(sum3([5, 11, 2]))
-print(sum3([7, 0, 0]))
+if __name__ == "__main__":
+    print(sum3([1, 2, 3]))
+    print(sum3([5, 11, 2]))
+    print(sum3([7, 0, 0]))
