@@ -27,11 +27,8 @@ def date_fashion(you: int, date: int) -> int:
         >>> date_fashion(5, 5)
         1
     """
-    if you <= 2 or date <= 2:
-        return 0
-    if you >= 8 or date >= 8:
-        return 2
-    return 1
+    return 2 if you >= 8 or date >= 8 else 0 if you <= 2 or date <= 2 else 1
+
 
 
 if __name__ == "__main__":
