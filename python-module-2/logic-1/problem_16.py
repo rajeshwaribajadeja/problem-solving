@@ -2,7 +2,7 @@
 
 
 def without_doubles(die1: int, die2: int, no_doubles: bool) -> int:
-    """Return the sum of two 6-sided dice rolls, adjusting for doubles if requested.
+    """Return sum of two dice rolls, adjusting for doubles if requested.
 
     If no_doubles is True and both dice show the same value, increment one
     die to the next value, wrapping around to 1 if its value was 6.
