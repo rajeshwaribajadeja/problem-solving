@@ -4,6 +4,9 @@
 def make_pi() -> list:
     """Return an integer array length 3 containing the first 3 digits of pi.
 
+    Args:
+        None.
+
     Returns:
         A list of length 3 containing [3, 1, 4].
 
