@@ -26,9 +26,12 @@ def g_happy(s: str) -> bool:
         >>> g_happy("xxggyygxx")
         False
     """
-    for i in range(len(s)):
+    n = len(s)
+    for i in range(n):
         if s[i] == "g":
-            if (i == 0 or s[i - 1] != "g") and (i == len(s) - 1 or s[i + 1] != "g"):
+            left_isolated = i == 0 or s[i - 1] != "g"
+            right_isolated = i == n - 1 or s[i + 1] != "g"
+            if left_isolated and right_isolated:
                 return False
     return True
 
