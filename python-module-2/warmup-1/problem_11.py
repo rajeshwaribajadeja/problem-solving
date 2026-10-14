@@ -2,7 +2,7 @@
 
 
 def mix_start(s: str) -> bool:
-    """Return True if the string begins with 'mix', except 'm' can be anything.
+    """Return True if string starts with 'mix' where 'm' can be anything.
 
     Return True if the given string begins with "mix", except the 'm'
     can be any character, so "pix", "9ix", etc. all count.
