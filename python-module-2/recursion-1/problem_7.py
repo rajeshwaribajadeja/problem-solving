@@ -23,7 +23,7 @@ def count_7(n: int) -> int:
         0
     """
 
-    return 0 if n==0 else 1 + count_7(n//10) if n % 10 == 7 else count_7(n // 10)
+    return 0 if n == 0 else (1 if n % 10 == 7 else 0) + count_7(n // 10)
 
 
 if __name__ == "__main__":
