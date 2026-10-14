@@ -23,7 +23,11 @@ def bunny_ears_2(n: int) -> int:
         5
     """
 
-    return 0 if n==0 else 3 + bunny_ears_2(n-1) if n % 2 == 0 else 2 + bunny_ears_2(n-1)
+    return (
+        0 if n == 0
+        else 3 + bunny_ears_2(n - 1) if n % 2 == 0
+        else 2 + bunny_ears_2(n - 1)
+    )
 
 
 if __name__ == "__main__":
