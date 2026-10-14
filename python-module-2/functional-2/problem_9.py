@@ -27,7 +27,8 @@ def square_56(nums: list) -> list:
 
     return list(filter(lambda x: x % 10 != 5 and x % 10 != 6, nums))
 
-
+if __name__ == "__main__":
     print(square_56([3, 1, 4]))
     print(square_56([1]))
     print(square_56([2]))
+
