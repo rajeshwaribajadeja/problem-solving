@@ -22,7 +22,11 @@ def count_11(s: str) -> int:
         >>> count_11("111")
         1
     """
-    return 0 if len(s) < 2 else 1 + count_11(s[2:]) if s[0:2] == "11" else count_11(s[1:])
+    return (
+        0 if len(s) < 2
+        else 1 + count_11(s[2:]) if s[:2] == "11"
+        else count_11(s[1:])
+    )
 
 
 if __name__ == "__main__":
