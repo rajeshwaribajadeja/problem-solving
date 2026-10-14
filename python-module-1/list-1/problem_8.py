@@ -12,7 +12,7 @@ def max_end3(nums: list) -> list:
         nums: A list of 3 integers.
 
     Returns:
-        A list of length 3 filled with the larger of the first and last elements.
+        List of length 3 filled with the max of first and last elements.
 
     Complexity:
         Time Complexity: O(1)
