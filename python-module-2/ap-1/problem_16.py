@@ -1,20 +1,39 @@
-def sum_heights(heights, start, end):
-    """
-    We have an array of heights, representing the altitude along a walking trail. Given start/end indexes into the array, return the sum of the changes for a walk beginning at the start index and ending at the end index. For example, with the heights {5, 3, 6, 7, 2} and start=2, end=4 yields a sum of 1 + 5 = 6. The start end end index will both be valid indexes into the array with start <= end.
+"""AP-1: sum_heights problem solution."""
 
-    sum_heights([5, 3, 6, 7, 2], 2, 4) → 6
-    sum_heights([5, 3, 6, 7, 2], 0, 1) → 2
-    sum_heights([5, 3, 6, 7, 2], 0, 4) → 11
-    """
 
+def sum_heights(heights: list, start: int, end: int) -> int:
+    """Return the sum of the absolute altitude changes along a walking trail.
+
+    Given start/end indexes into the array, return the sum of the changes
+    for a walk beginning at the start index and ending at the end index.
+
+    Args:
+        heights: A list of integers representing trail altitudes.
+        start: Starting index (inclusive).
+        end: Ending index (inclusive).
+
+    Returns:
+        The sum of absolute height changes between start and end.
+
+    Complexity:
+        Time Complexity: O(end - start)
+        Space Complexity: O(1) auxiliary space.
+
+    Examples:
+        >>> sum_heights([5, 3, 6, 7, 2], 2, 4)
+        6
+        >>> sum_heights([5, 3, 6, 7, 2], 0, 1)
+        2
+        >>> sum_heights([5, 3, 6, 7, 2], 0, 4)
+        11
+    """
     total = 0
-
     for i in range(start, end):
         total += abs(heights[i + 1] - heights[i])
-
     return total
 
 
-print(sum_heights([5, 3, 6, 7, 2], 2, 4))
-print(sum_heights([5, 3, 6, 7, 2], 0, 1))
-print(sum_heights([5, 3, 6, 7, 2], 0, 4))
+if __name__ == "__main__":
+    print(sum_heights([5, 3, 6, 7, 2], 2, 4))
+    print(sum_heights([5, 3, 6, 7, 2], 0, 1))
+    print(sum_heights([5, 3, 6, 7, 2], 0, 4))
