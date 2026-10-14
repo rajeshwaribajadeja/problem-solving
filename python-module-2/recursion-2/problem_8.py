@@ -1,14 +1,33 @@
-def split_53(nums):
+"""Recursion-2: split_53 problem solution."""
+
+
+def split_53(nums: list) -> bool:
+    """Return True if nums can split with 5s in one group and 3s in other.
+
+    Given an array of ints, determine if it is possible to divide the
+    ints into two groups such that the sum of the two groups is the
+    same, with these constraints: all multiples of 5 must be in one
+    group, and all multiples of 3 (not 5) must be in the other.
+
+    Args:
+        nums: List of integers.
+
+    Returns:
+        True if such an equal split is possible, False otherwise.
+
+    Complexity:
+        Time Complexity: O(2^n) in the worst case where n is len(nums).
+        Space Complexity: O(n) auxiliary space for recursion call stack.
+
+    Examples:
+        >>> split_53([1, 1])
+        True
+        >>> split_53([1, 1, 1])
+        False
+        >>> split_53([2, 4, 2])
+        True
     """
-    Given an array of ints, is it possible to divide the ints into two groups, so that the sum of the two groups is the same, with these constraints: all the values that are multiple of 5 must be in one group, and all the values that are a multiple of 3 (and not a multiple of 5) must be in the other. (No loops needed.)
-
-
-    split_53([1, 1]) → True
-    split_53([1, 1, 1]) → False
-    split_53([2, 4, 2]) → True
-    """
-
-    def helper(index, group_1, group_2):
+    def helper(index: int, group_1: int, group_2: int) -> bool:
         if index == len(nums):
             return group_1 == group_2
 
@@ -26,6 +45,7 @@ def split_53(nums):
     return helper(0, 0, 0)
 
 
-print(split_53([1, 1]))
-print(split_53([1, 1, 1]))
-print(split_53([2, 4, 2]))
+if __name__ == "__main__":
+    print(split_53([1, 1]))
+    print(split_53([1, 1, 1]))
+    print(split_53([2, 4, 2]))
