@@ -26,9 +26,10 @@ def in3050(a: int, b: int) -> bool:
         >>> in3050(40, 50)
         True
     """
-    in_30_40 = 30 <= a <= 40 and 30 <= b <= 40
-    in_40_50 = 40 <= a <= 50 and 40 <= b <= 50
-    return in_30_40 or in_40_50
+    return (
+        (30 <= a <= 40 and 30 <= b <= 40)
+        or (40 <= a <= 50 and 40 <= b <= 50)
+    )
 
 
 if __name__ == "__main__":
