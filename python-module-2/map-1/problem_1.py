@@ -1,23 +1,38 @@
-def map_bully(map):
-    """
-    Modify and return the given map as follows: if the key "a" has a value,
-    set the key "b" to have that value, and set the key "a" to have the
-    value "". Basically "b" is a bully, taking the value and replacing it
+"""Map-1: map_bully problem solution."""
+
+
+def map_bully(map_dict: dict) -> dict:
+    """Modify map: if 'a' has a value, set 'b' to that value and 'a' to ''.
+
+    Basically 'b' is a bully, taking the value of 'a' and replacing it
     with the empty string.
 
+    Args:
+        map_dict: Input dictionary with string keys and string values.
 
-    map_bully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
-    map_bully({"a": "candy"}) → {"a": "", "b": "candy"}
-    map_bully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b": "candy", "c": "meh"}
+    Returns:
+        The modified dictionary.
+
+    Complexity:
+        Time Complexity: O(1) assuming small strings, or O(L) where L is
+            the length of the string value for key 'a'.
+        Space Complexity: O(1) auxiliary space (modified in-place).
+
+    Examples:
+        >>> map_bully({"a": "candy", "b": "dirt"})
+        {'a': '', 'b': 'candy'}
+        >>> map_bully({"a": "candy"})
+        {'a': '', 'b': 'candy'}
+        >>> map_bully({"a": "candy", "b": "carrot", "c": "meh"})
+        {'a': '', 'b': 'candy', 'c': 'meh'}
     """
-
-    if "a" in map:
-        map["b"] = map["a"]
-        map["a"] = ""
-
-    return map
+    if "a" in map_dict:
+        map_dict["b"] = map_dict["a"]
+        map_dict["a"] = ""
+    return map_dict
 
 
-print(map_bully({"a": "candy", "b": "dirt"}))
-print(map_bully({"a": "candy"}))
-print(map_bully({"a": "candy", "b": "carrot", "c": "meh"}))
+if __name__ == "__main__":
+    print(map_bully({"a": "candy", "b": "dirt"}))
+    print(map_bully({"a": "candy"}))
+    print(map_bully({"a": "candy", "b": "carrot", "c": "meh"}))
