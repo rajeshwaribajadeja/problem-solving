@@ -18,7 +18,7 @@ def repeat_separator(word: str, sep: str, count: int) -> str:
 
     Complexity:
         Time Complexity: O(count * (len(word) + len(sep))).
-        Space Complexity: O(count * (len(word) + len(sep))) to store the result.
+        Space Complexity: O(count * (len(word) + len(sep))).
 
     Examples:
         >>> repeat_separator("Word", "X", 3)
