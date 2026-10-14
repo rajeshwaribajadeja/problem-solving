@@ -4,9 +4,10 @@
 def evenly_spaced(a: int, b: int, c: int) -> bool:
     """Determine whether three integers are evenly spaced.
 
-    Given three ints, a b c, one of them is small, one is medium and one is
-    large. Return True if the three values are evenly spaced, so the difference
-    between small and medium is the same as the difference between medium and large.
+    Given three ints, a b c, one of them is small, one is medium and
+    one is large. Return True if the three values are evenly spaced, so
+    the difference between small and medium is the same as the difference
+    between medium and large.
 
     Args:
         a: First integer.
