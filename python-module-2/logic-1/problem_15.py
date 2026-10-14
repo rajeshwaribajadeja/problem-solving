@@ -10,7 +10,8 @@ def less_by_10(a: int, b: int, c: int) -> bool:
         c: Third integer.
 
     Returns:
-        True if the difference between any pair is at least 10, False otherwise.
+        True if the difference between any pair is at least 10,
+        False otherwise.
 
     Complexity:
         Time Complexity: O(1)
