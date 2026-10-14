@@ -26,7 +26,10 @@ def last2(s: str) -> int:
         >>> last2('axxxaaxx')
         2
     """
-    return s[:-2].count(s[-2:]) if len(s) >= 2 else 0
+    if len(s) < 2:
+        return 0
+    end = s[-2:]
+    return sum(1 for i in range(len(s) - 2) if s[i:i + 2] == end)
 
 
 if __name__ == "__main__":
