@@ -1,12 +1,32 @@
-def group_sum_clump(start, nums, target):
-    """
-    Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target, with this additional constraint: if there are numbers in the array that are adjacent and the identical value, they must either all be chosen, or none of them chosen. For example, with the array {1, 2, 2, 2, 5, 2}, either all three 2's in the middle must be chosen or not, all as a group. (one loop can be used to find the extent of the identical values).
+"""Recursion-2: group_sum_clump problem solution."""
 
-    group_sum_clump(0, [2, 4, 8], 10) → True
-    group_sum_clump(0, [1, 2, 4, 8, 1], 14) → True
-    group_sum_clump(0, [2, 4, 4, 8], 14) → False
-    """
 
+def group_sum_clump(start: int, nums: list, target: int) -> bool:
+    """Return True if a subset sums to target with adjacent equals clumped.
+
+    If there are numbers in the array that are adjacent and identical,
+    they must either all be chosen, or none of them chosen.
+
+    Args:
+        start: Starting index in nums.
+        nums: List of integers.
+        target: Target sum.
+
+    Returns:
+        True if a valid clumped subset sums to target, False otherwise.
+
+    Complexity:
+        Time Complexity: O(2^n) in the worst case where n is len(nums).
+        Space Complexity: O(n) auxiliary space for recursion call stack.
+
+    Examples:
+        >>> group_sum_clump(0, [2, 4, 8], 10)
+        True
+        >>> group_sum_clump(0, [1, 2, 4, 8, 1], 14)
+        True
+        >>> group_sum_clump(0, [2, 4, 4, 8], 14)
+        False
+    """
     if target == 0:
         return True
 
@@ -25,6 +45,7 @@ def group_sum_clump(start, nums, target):
     return group_sum_clump(end, nums, target)
 
 
-print(group_sum_clump(0, [2, 4, 8], 10))
-print(group_sum_clump(0, [1, 2, 4, 8, 1], 14))
-print(group_sum_clump(0, [2, 4, 4, 8], 14))
+if __name__ == "__main__":
+    print(group_sum_clump(0, [2, 4, 8], 10))
+    print(group_sum_clump(0, [1, 2, 4, 8, 1], 14))
+    print(group_sum_clump(0, [2, 4, 4, 8], 14))
