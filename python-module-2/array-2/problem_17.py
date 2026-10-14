@@ -22,7 +22,10 @@ def triple_up(nums: list) -> bool:
         >>> triple_up([1, 2, 4])
         False
     """
-    return any(b == a+1 and c == b+1 for a, b, c in zip(nums, nums[1:], nums[2:]))
+    return any(
+        b == a + 1 and c == b + 1
+        for a, b, c in zip(nums, nums[1:], nums[2:])
+    )
 
 
 if __name__ == "__main__":
