@@ -28,7 +28,11 @@ def tea_party(tea: int, candy: int) -> int:
         >>> tea_party(20, 6)
         2
     """
-    return 0 if min(tea, candy) < 5 else 2 if max(tea, candy) >= 2 * min(tea, candy) else 1
+    return (
+        0 if min(tea, candy) < 5
+        else 2 if max(tea, candy) >= 2 * min(tea, candy)
+        else 1
+    )
 
 
 if __name__ == "__main__":
