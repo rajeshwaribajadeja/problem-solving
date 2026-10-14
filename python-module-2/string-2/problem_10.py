@@ -25,7 +25,11 @@ def same_star_char(s: str) -> bool:
         >>> same_star_char("*xa*az")
         True
     """
-    return all(s[i - 1] == s[i + 1] for i in range(1, len(s) - 1) if s[i] == "*")
+    return all(
+        s[i - 1] == s[i + 1]
+        for i in range(1, len(s) - 1)
+        if s[i] == "*"
+    )
 
 
 if __name__ == "__main__":
