@@ -25,7 +25,11 @@ def mod_three(nums: list) -> bool:
         >>> mod_three([2, 4, 2, 5])
         True
     """
-    return any(nums[i] % 2 == nums[i+1] % 2 == nums[i+2] % 2 for i in range(len(nums)-2))
+    return any(
+        nums[i] % 2 == nums[i + 1] % 2 == nums[i + 2] % 2
+        for i in range(len(nums) - 2)
+    )
+
 
 if __name__ == "__main__":
     print(mod_three([2, 1, 3, 5]))
