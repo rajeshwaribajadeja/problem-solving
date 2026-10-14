@@ -22,7 +22,11 @@ def string_clean(s: str) -> str:
         >>> string_clean("Hello")
         'Helo'
     """
-    return s if len(s) <=1 else string_clean(s[1:]) if s[0] == s[1] else s[0] + string_clean(s[1:])
+    return (
+        s if len(s) <= 1
+        else string_clean(s[1:]) if s[0] == s[1]
+        else s[0] + string_clean(s[1:])
+    )
 
 
 if __name__ == "__main__":
