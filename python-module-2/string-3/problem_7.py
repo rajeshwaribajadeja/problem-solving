@@ -25,7 +25,11 @@ def same_ends(s: str) -> str:
         >>> same_ends("xxx")
         'x'
     """
-    return max((s[:i] for i in range(1, len(s)//2 + 1) if s[:i] == s[-i:]), key=len, default="")
+    candidates = (
+        s[:i] for i in range(1, len(s) // 2 + 1)
+        if s[:i] == s[-i:]
+    )
+    return max(candidates, key=len, default="")
 
 
 if __name__ == "__main__":
