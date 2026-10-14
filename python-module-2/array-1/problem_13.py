@@ -12,7 +12,8 @@ def unlucky1(nums: list) -> bool:
         nums: A list of integers.
 
     Returns:
-        True if [1, 3] appears in the first 2 or last 2 starting positions, False otherwise.
+        True if [1, 3] appears in the first 2 or last 2 positions,
+        False otherwise.
 
     Complexity:
         Time Complexity: O(1)

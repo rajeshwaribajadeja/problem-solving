@@ -27,7 +27,15 @@ def fizz_string(s: str) -> str:
         >>> fizz_string("fib")
         'FizzBuzz'
     """
-    return "FizzBuzz" if s.startswith("f") and s.endswith("b") else "Fizz" if s.startswith("f") else "Buzz" if s.endswith("b") else s
+    starts_f = s.startswith("f")
+    ends_b = s.endswith("b")
+    if starts_f and ends_b:
+        return "FizzBuzz"
+    if starts_f:
+        return "Fizz"
+    if ends_b:
+        return "Buzz"
+    return s
 
 
 if __name__ == "__main__":
