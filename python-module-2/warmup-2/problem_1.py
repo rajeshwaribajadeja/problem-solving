@@ -1,20 +1,35 @@
-def countxx(str):
-    """
-    Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+"""Warmup-2: countxx problem solution."""
 
 
-    countXX("abcxx") → 1
-    countXX("xxx") → 2
-    countXX("xxxx") → 3
+def countxx(s: str) -> int:
+    """Return the count of 'xx' in string s, allowing overlap.
 
+    Args:
+        s: Input string.
+
+    Returns:
+        Number of overlapping 'xx' occurrences in s.
+
+    Complexity:
+        Time Complexity: O(n) where n is the length of s.
+        Space Complexity: O(1) auxiliary space.
+
+    Examples:
+        >>> countxx("abcxx")
+        1
+        >>> countxx("xxx")
+        2
+        >>> countxx("xxxx")
+        3
     """
     count = 0
-    for i in range(len(str)-1):
-        if str[i] == str[i+1] == "x":
+    for i in range(len(s) - 1):
+        if s[i] == s[i + 1] == "x":
             count += 1
-
     return count
 
-print(countxx("abcxx"))
-print(countxx("xxx"))
-print(countxx("xxxx"))
+
+if __name__ == "__main__":
+    print(countxx("abcxx"))
+    print(countxx("xxx"))
+    print(countxx("xxxx"))
