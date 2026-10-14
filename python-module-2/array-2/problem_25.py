@@ -12,7 +12,8 @@ def without_ten(nums: list) -> list:
         nums: A list of integers.
 
     Returns:
-        The array without 10s and padded with trailing zeros to original length.
+        The array without 10s and padded with trailing zeros to
+        original length.
 
     Complexity:
         Time Complexity: O(N) where N is the length of the list.
