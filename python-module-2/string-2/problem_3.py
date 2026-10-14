@@ -27,7 +27,11 @@ def mix_string(a: str, b: str) -> str:
         >>> mix_string("xxxx", "There")
         'xTxhxexre'
     """
-    return "".join(x + y for x, y in zip(a, b)) + a[min(len(a), len(b)):] + b[min(len(a), len(b)):]
+    return (
+        "".join(x + y for x, y in zip(a, b))
+        + a[min(len(a), len(b)):]
+        + b[min(len(a), len(b)):]
+    )
 
 
 if __name__ == "__main__":
