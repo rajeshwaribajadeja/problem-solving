@@ -27,7 +27,7 @@ def sum_limit(a: int, b: int) -> int:
         >>> sum_limit(8, 1)
         9
     """
-    return a if len(str(a + b)) == len(str(a)) else a + b
+    return a + b if len(str(a + b)) == len(str(a)) else a
 
 
 if __name__ == "__main__":
