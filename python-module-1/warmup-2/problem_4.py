@@ -30,4 +30,4 @@ def string_splosion(s: str) -> str:
 if __name__ == "__main__":
     print(string_splosion("Code"))
     print(string_splosion("abc"))
-    print(string_splosion("ab"))
+    print(string_splosion("ab"))
