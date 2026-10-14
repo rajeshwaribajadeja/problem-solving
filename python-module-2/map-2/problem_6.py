@@ -1,31 +1,38 @@
-def word_append(words):
+"""Map-2: word_append problem solution."""
+
+
+def word_append(words: list) -> str:
+    """Append a string to result every 2nd, 4th, 6th, etc. time it appears.
+
+    Args:
+        words: List of strings.
+
+    Returns:
+        String composed of words appended upon their even appearances.
+
+    Complexity:
+        Time Complexity: O(n * L) where n is the number of words and L is
+            the average string length.
+        Space Complexity: O(n * L) for the frequency map and result string.
+
+    Examples:
+        >>> word_append(["a", "b", "a"])
+        'a'
+        >>> word_append(["a", "b", "a", "c", "a", "d", "a"])
+        'aa'
+        >>> word_append(["a", "", "a"])
+        'a'
     """
-    Loop over the given array of strings to build a result string like this:
-    when a string appears the 2nd, 4th, 6th, etc. time in the array, append
-    the string to the result. Return the empty string if no string appears
-    a 2nd time.
-
-
-    word_append(["a", "b", "a"]) → "a"
-    word_append(["a", "b", "a", "c", "a", "d", "a"]) → "aa"
-    word_append(["a", "", "a"]) → "a"
-    """
-
-    count = {}
-    result = ""
-
+    counts = {}
+    result = []
     for word in words:
-        if word in count:
-            count[word] = count[word] + 1
-        else:
-            count[word] = 1
-
-        if count[word] % 2 == 0:
-            result = result + word
-
-    return result
+        counts[word] = counts.get(word, 0) + 1
+        if counts[word] % 2 == 0:
+            result.append(word)
+    return "".join(result)
 
 
-print(word_append(["a", "b", "a"]))
-print(word_append(["a", "b", "a", "c", "a", "d", "a"]))
-print(word_append(["a", "", "a"]))
+if __name__ == "__main__":
+    print(word_append(["a", "b", "a"]))
+    print(word_append(["a", "b", "a", "c", "a", "d", "a"]))
+    print(word_append(["a", "", "a"]))
