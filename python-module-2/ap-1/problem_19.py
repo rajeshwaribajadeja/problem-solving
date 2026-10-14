@@ -28,7 +28,8 @@ def user_compare(name_a: str, id_a: int, name_b: str, id_b: int) -> int:
         >>> user_compare("bb", 1, "bb", 1)
         0
     """
-    return (name_a > name_b) - (name_a < name_b) or (id_a > id_b) - (id_a < id_b)
+    cmp_name = (name_a > name_b) - (name_a < name_b)
+    return cmp_name or (id_a > id_b) - (id_a < id_b)
 
 
 if __name__ == "__main__":
