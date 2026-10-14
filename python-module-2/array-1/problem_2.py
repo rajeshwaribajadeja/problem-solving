@@ -2,7 +2,8 @@
 
 
 def make_last(nums: list) -> list:
-    """Return a new array of double length ending with the original last element.
+    """Return a new array of double length ending with the original last
+    element.
 
     Given an int array, return a new array with double the length where
     its last element is the same as the original array, and all the other
