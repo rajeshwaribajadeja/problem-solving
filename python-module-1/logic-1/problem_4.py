@@ -27,7 +27,11 @@ def caught_speeding(speed: int, is_birthday: bool) -> int:
         >>> caught_speeding(65, True)
         0
     """
-    return 0 if speed <= 60 + (5 if is_birthday else 0) else 1 if speed <= 80 + (5 if is_birthday else 0) else 2
+    return (
+        0 if speed <= 60 + (5 if is_birthday else 0)
+        else 1 if speed <= 80 + (5 if is_birthday else 0)
+        else 2
+    )
 
 
 if __name__ == "__main__":
