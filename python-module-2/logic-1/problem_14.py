@@ -2,7 +2,7 @@
 
 
 def last_digit(a: int, b: int, c: int) -> bool:
-    """Return True if two or more of the integers have the same rightmost digit.
+    """Return True if two or more integers have the same rightmost digit.
 
     Args:
         a: First non-negative integer.
@@ -10,7 +10,8 @@ def last_digit(a: int, b: int, c: int) -> bool:
         c: Third non-negative integer.
 
     Returns:
-        True if at least two integers share the same last digit, False otherwise.
+        True if at least two integers share the same last digit,
+        False otherwise.
 
     Complexity:
         Time Complexity: O(1)
