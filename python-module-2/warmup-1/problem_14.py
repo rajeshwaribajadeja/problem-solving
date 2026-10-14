@@ -26,7 +26,11 @@ def close10(a: int, b: int) -> int:
         >>> close10(13, 7)
         0
     """
-    return 0 if abs(10 - a) == abs(10 - b) else a if abs(10 - a) < abs(10 - b) else b
+    return (
+        0 if abs(10 - a) == abs(10 - b)
+        else a if abs(10 - a) < abs(10 - b)
+        else b
+    )
 
 
 if __name__ == "__main__":
