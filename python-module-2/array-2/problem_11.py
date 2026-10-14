@@ -25,7 +25,10 @@ def has_77(nums: list) -> bool:
         >>> has_77([1, 7, 1, 1, 7])
         False
     """
-    return any(nums[i] == 7 and 7 in nums[i+1:i+3] for i in range(len(nums)-1))
+    return any(
+        nums[i] == 7 and 7 in nums[i + 1:i + 3]
+        for i in range(len(nums) - 1)
+    )
 
 
 if __name__ == "__main__":
