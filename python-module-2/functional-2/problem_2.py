@@ -25,7 +25,8 @@ def no_9(nums: list) -> list:
 
     return list(filter(lambda x: x % 10 != 9, nums))
 
-
+if __name__ == "__main__":
     print(no_9([1, 2, 19]))
     print(no_9([9, 19, 29, 3]))
     print(no_9([1, 2, 3]))
+
