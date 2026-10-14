@@ -28,7 +28,10 @@ def min_cat(a: str, b: str) -> str:
         >>> min_cat("java", "Hello")
         'javaello'
     """
-    return a[-min(len(a), len(b)):] + b[-min(len(a), len(b)):] if a and b else ""
+    return (
+        a[-min(len(a), len(b)):] + b[-min(len(a), len(b)):]
+        if a and b else ""
+    )
 
 
 if __name__ == "__main__":
