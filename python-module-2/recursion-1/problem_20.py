@@ -23,7 +23,11 @@ def end_x(s: str) -> str:
         'hihixxx'
     """
 
-    return "" if not s else (end_x(s[1:]) + "x" if s[0] == "x" else s[0] + end_x(s[1:]))
+    return (
+        "" if not s
+        else end_x(s[1:]) + "x" if s[0] == "x"
+        else s[0] + end_x(s[1:])
+    )
 
 
 if __name__ == "__main__":
