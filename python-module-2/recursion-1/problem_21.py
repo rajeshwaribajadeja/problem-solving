@@ -24,11 +24,7 @@ def count_pairs(s: str) -> int:
         >>> count_pairs("axbx")
         1
     """
-
-    if len(s) < 3:
-        return 0
-    
-    return 1 + count_pairs(s[1:]) if s[0] == s[2] else count_pairs(s[1:]) if len(s) > 3 else 0
+    return 0 if len(s) < 3 else 1 + count_pairs(s[1:]) if s[0] == s[2] else count_pairs(s[1:])
 
 if __name__ == "__main__":
     print(count_pairs("axa"))
