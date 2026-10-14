@@ -11,7 +11,8 @@ def special_eleven(n: int) -> bool:
         n: A non-negative integer.
 
     Returns:
-        True if n is a multiple of 11 or 1 more than a multiple of 11, False otherwise.
+        True if n is a multiple of 11 or 1 more than a multiple of 11,
+        False otherwise.
 
     Complexity:
         Time Complexity: O(1)
