@@ -2,7 +2,8 @@
 
 
 def fizz_string2(n: int) -> str:
-    """Return the string form of n followed by '!', or 'Fizz!', 'Buzz!', 'FizzBuzz!'.
+    """Return the string form of n followed by '!', or 'Fizz!', 'Buzz!',
+    'FizzBuzz!'.
 
     Given an int n, return the string form of the number followed by "!".
     Except if the number is divisible by 3 use "Fizz" instead of the number,
@@ -27,7 +28,12 @@ def fizz_string2(n: int) -> str:
         >>> fizz_string2(3)
         'Fizz!'
     """
-    return "FizzBuzz!" if n % 15 == 0 else "Fizz!" if n % 3 == 0 else "Buzz!" if n % 5 == 0 else f"{n}!"
+    return (
+        "FizzBuzz!" if n % 15 == 0
+        else "Fizz!" if n % 3 == 0
+        else "Buzz!" if n % 5 == 0
+        else f"{n}!"
+    )
 
 
 if __name__ == "__main__":
