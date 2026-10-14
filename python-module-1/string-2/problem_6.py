@@ -2,7 +2,7 @@
 
 
 def xyz_there(s: str) -> bool:
-    """Return True if 'xyz' appears without directly being preceded by a period.
+    """Check if 'xyz' appears without directly being preceded by a period.
 
     Return True if the given string contains an appearance of "xyz"
     where the "xyz" is not directly preceded by a period (.).
@@ -23,7 +23,7 @@ def xyz_there(s: str) -> bool:
         >>> xyz_there('abc.xyz')
         False
         >>> xyz_there('xyz.abc')
-        True 
+        True
     """
     return any(
         s[i:i + 3] == "xyz" and (i == 0 or s[i - 1] != ".")
