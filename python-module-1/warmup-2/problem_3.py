@@ -31,4 +31,4 @@ def string_bits(s: str) -> str:
 if __name__ == "__main__":
     print(string_bits("Hello"))
     print(string_bits("Hi"))
-    print(string_bits("Heeololeo"))
+    print(string_bits("Heeololeo"))
