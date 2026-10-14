@@ -2,7 +2,8 @@
 
 
 def map_ab(map_dict: dict) -> dict:
-    """Modify map: if both 'a' and 'b' are present, store concatenation in 'ab'.
+    """Modify map: if both 'a' and 'b' are present, store concatenation
+    in 'ab'.
 
     Args:
         map_dict: Input dictionary with string keys and string values.
