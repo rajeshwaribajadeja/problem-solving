@@ -12,7 +12,7 @@ def xyz_middle(s: str) -> bool:
         s: The input string.
 
     Returns:
-        True if "xyz" appears within 1 character of the center, False otherwise.
+        True if "xyz" is within 1 character of center, False otherwise.
 
     Complexity:
         Time Complexity: O(N) where N is the length of the string.
@@ -26,7 +26,11 @@ def xyz_middle(s: str) -> bool:
         >>> xyz_middle("AxyzBBB")
         False
     """
-    return any(s[i:i+3] == "xyz" and abs(i - (len(s) - i - 3)) <= 1 for i in range(len(s) - 2))
+    n = len(s)
+    return any(
+        s[i:i + 3] == "xyz" and abs(i - (n - i - 3)) <= 1
+        for i in range(n - 2)
+    )
 
 
 if __name__ == "__main__":
