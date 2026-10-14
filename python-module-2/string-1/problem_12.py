@@ -6,7 +6,8 @@ def concat(a: str, b: str) -> str:
 
     Given two strings, append them together (known as "concatenation")
     and return the result. However, if the concatenation creates a
-    double-char, then omit one of the chars, so "abc" and "cat" yields "abcat".
+    double-char, then omit one of the chars, so "abc" and "cat" yields
+    "abcat".
 
     Args:
         a: First string.
