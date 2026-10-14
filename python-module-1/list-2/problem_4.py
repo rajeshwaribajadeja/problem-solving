@@ -2,11 +2,11 @@
 
 
 def sum13(nums: list) -> int:
-    """Return the sum of numbers in the array, ignoring 13 and numbers after it.
+    """Return the sum of numbers in array, ignoring 13 and numbers after it.
 
-    Return the sum of the numbers in the array, returning 0 for an empty array.
-    Except the number 13 is very unlucky, so it does not count and numbers that
-    come immediately after a 13 also do not count.
+    Return the sum of the numbers in the array, returning 0 for an empty
+    array. The number 13 is unlucky, so it does not count and numbers
+    that come immediately after a 13 also do not count.
 
     Args:
         nums: A list of integers.
