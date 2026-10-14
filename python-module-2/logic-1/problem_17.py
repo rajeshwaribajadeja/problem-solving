@@ -13,7 +13,8 @@ def max_mod5(a: int, b: int) -> int:
         b: Second integer.
 
     Returns:
-        0 if equal; smaller value if remainder mod 5 matches; larger value otherwise.
+        0 if equal; smaller value if remainder mod 5 matches;
+        larger value otherwise.
 
     Complexity:
         Time Complexity: O(1)
