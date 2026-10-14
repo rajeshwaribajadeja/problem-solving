@@ -1,18 +1,32 @@
-def sum_digits(n):
+"""Recursion-1: sum_digits problem solution."""
+
+
+def sum_digits(n: int) -> int:
+    """Return the sum of the digits of non-negative integer n.
+
+    Args:
+        n: Non-negative integer.
+
+    Returns:
+        Sum of all digits in n.
+
+    Complexity:
+        Time Complexity: O(log10(n)) recursive calls.
+        Space Complexity: O(log10(n)) auxiliary space for call stack.
+
+    Examples:
+        >>> sum_digits(126)
+        9
+        >>> sum_digits(49)
+        13
+        >>> sum_digits(12)
+        3
     """
-    Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
-    sum_digits(126) → 9
-    sum_digits(49) → 13
-    sum_digits(12) → 3
-    """
-
-    if n == 0:
-        return 0
-
-    return (n % 10) + sum_digits(n // 10)
+    return 0 if n==0 else (n % 10) + sum_digits(n // 10)
 
 
-print(sum_digits(126))
-print(sum_digits(49))
-print(sum_digits(12))
+if __name__ == "__main__":
+    print(sum_digits(126))
+    print(sum_digits(49))
+    print(sum_digits(12))
