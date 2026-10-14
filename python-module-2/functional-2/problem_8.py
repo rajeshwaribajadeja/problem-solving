@@ -28,7 +28,8 @@ def two_2(nums: list) -> list:
 
     return list(filter(lambda x: x % 10 != 2, nums))
 
-
+if __name__ == "__main__":
     print(two_2([1, 2, 3]))
     print(two_2([2, 6, 11]))
     print(two_2([0]))
+
