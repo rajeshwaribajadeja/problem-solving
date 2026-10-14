@@ -22,8 +22,14 @@ def either_24(nums: list) -> bool:
         >>> either_24([4, 4, 1, 2, 2])
         False
     """
-    has_22 = any(nums[i] == 2 and nums[i + 1] == 2 for i in range(len(nums) - 1))
-    has_44 = any(nums[i] == 4 and nums[i + 1] == 4 for i in range(len(nums) - 1))
+    has_22 = any(
+        nums[i] == 2 and nums[i + 1] == 2
+        for i in range(len(nums) - 1)
+    )
+    has_44 = any(
+        nums[i] == 4 and nums[i + 1] == 4
+        for i in range(len(nums) - 1)
+    )
     return has_22 != has_44
 
 
