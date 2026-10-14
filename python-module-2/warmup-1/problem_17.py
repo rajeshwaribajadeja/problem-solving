@@ -2,7 +2,7 @@
 
 
 def string_e(s: str) -> bool:
-    """Return True if the given string contains between 1 and 3 'e' characters.
+    """Return True if string contains between 1 and 3 'e' characters.
 
     Return True if the given string contains between 1 and 3 'e' chars.
 
@@ -10,7 +10,7 @@ def string_e(s: str) -> bool:
         s: The input string.
 
     Returns:
-        True if the count of 'e' is between 1 and 3 inclusive, False otherwise.
+        True if 'e' count is between 1 and 3 inclusive, False otherwise.
 
     Complexity:
         Time Complexity: O(N) where N is the length of the string.
