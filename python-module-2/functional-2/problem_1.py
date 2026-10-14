@@ -25,7 +25,8 @@ def no_neg(nums: list) -> list:
 
     return list(filter(lambda x: x >= 0, nums))
 
-
+if __name__ == "__main__":
     print(no_neg([1, -2]))
     print(no_neg([-3, -3, 3, 3]))
     print(no_neg([-1, -1, -1]))
+
