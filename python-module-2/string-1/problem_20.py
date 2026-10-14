@@ -28,7 +28,11 @@ def start_word(s: str, word: str) -> str:
         >>> start_word("hippo", "i")
         'h'
     """
-    return s[:len(word)] if len(s) >= len(word) and s[1:len(word)] == word[1:] else ""
+    return (
+        s[:len(word)]
+        if len(s) >= len(word) and s[1:len(word)] == word[1:]
+        else ""
+    )
 
 
 if __name__ == "__main__":
