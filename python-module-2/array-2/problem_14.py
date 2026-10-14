@@ -25,7 +25,10 @@ def have_three(nums: list) -> bool:
         >>> have_three([3, 4, 3, 3, 4])
         False
     """
-    return nums.count(3) == 3 and not any(a == b == 3 for a, b in zip(nums, nums[1:]))
+    return (
+        nums.count(3) == 3
+        and not any(a == b == 3 for a, b in zip(nums, nums[1:]))
+    )
 
 
 if __name__ == "__main__":
