@@ -29,7 +29,11 @@ def alarm_clock(day: int, vacation: bool) -> str:
         '10:00'
     """
     is_weekend = day in (0, 6)
-    return "off" if vacation and is_weekend else "10:00" if vacation or is_weekend else "7:00"
+    return (
+        "off" if vacation and is_weekend
+        else "10:00" if vacation or is_weekend
+        else "7:00"
+    )
 
 
 if __name__ == "__main__":
