@@ -31,7 +31,12 @@ def red_ticket(a: int, b: int, c: int) -> int:
         >>> red_ticket(0, 0, 0)
         5
     """
-    return 10 if (a, b, c) == (2, 2, 2) else 5 if len({a, b, c}) == 1 else 1 if a not in (b, c) else 0
+    return (
+        10 if (a, b, c) == (2, 2, 2)
+        else 5 if len({a, b, c}) == 1
+        else 1 if a not in (b, c)
+        else 0
+    )
 
 
 if __name__ == "__main__":
