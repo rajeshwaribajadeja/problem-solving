@@ -23,7 +23,11 @@ def count_abc(s: str) -> int:
         2
     """
 
-    return 0 if len(s) < 3 else 1 + count_abc(s[1:]) if s[0:3] == "abc" or s[0:3] == "aba" else count_abc(s[1:]) 
+    return (
+        0 if len(s) < 3
+        else 1 + count_abc(s[1:]) if s[:3] in ("abc", "aba")
+        else count_abc(s[1:])
+    )
 
 
 if __name__ == "__main__":
