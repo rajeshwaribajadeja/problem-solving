@@ -1,13 +1,28 @@
-def no_yy(words):
-    """
-    Given a list of strings, return a list where each string has "y"
-    added at its end, omitting any resulting strings that contain
-    "yy" as a substring anywhere.
+"""Functional-2: no_yy problem solution."""
 
 
-    no_yy(["a", "b", "c"]) → ["ay", "by", "cy"]
-    no_yy(["a", "b", "cy"]) → ["ay", "by"]
-    no_yy(["xx", "ya", "zz"]) → ["xxy", "yay", "zzy"]
+def no_yy(words: list) -> list:
+    """Return a list where each string has 'y' appended, omitting any
+    with 'yy'.
+
+    Args:
+        words: List of strings.
+
+    Returns:
+        List of strings with 'y' appended, omitting any that contain 'yy'.
+
+    Complexity:
+        Time Complexity: O(n * L) where n is the number of words and L is
+            the average string length.
+        Space Complexity: O(n * L) for the newly created output list.
+
+    Examples:
+        >>> no_yy(["a", "b", "c"])
+        ['ay', 'by', 'cy']
+        >>> no_yy(["a", "b", "cy"])
+        ['ay', 'by']
+        >>> no_yy(["xx", "ya", "zz"])
+        ['xxy', 'yay', 'zzy']
     """
 
     words = list(map(lambda x: x + "y", words))
@@ -15,6 +30,7 @@ def no_yy(words):
     return list(filter(lambda x: "yy" not in x, words))
 
 
-print(no_yy(["a", "b", "c"]))
-print(no_yy(["a", "b", "cy"]))
-print(no_yy(["xx", "ya", "zz"]))
+if __name__ == "__main__":
+    print(no_yy(["a", "b", "c"]))
+    print(no_yy(["a", "b", "cy"]))
+    print(no_yy(["xx", "ya", "zz"]))
