@@ -25,7 +25,11 @@ def see_color(s: str) -> str:
         >>> see_color("blueTimes")
         'blue'
     """
-    return "red" if s.startswith("red") else "blue" if s.startswith("blue") else ""
+    return (
+        "red" if s.startswith("red")
+        else "blue" if s.startswith("blue")
+        else ""
+    )
 
 
 if __name__ == "__main__":
