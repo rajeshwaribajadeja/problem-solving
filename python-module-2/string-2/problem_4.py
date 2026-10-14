@@ -15,7 +15,7 @@ def repeat_end(s: str, n: int) -> str:
         A string of the last n characters repeated n times.
 
     Complexity:
-        Time Complexity: O(n^2) to construct the repeated string of length n^2.
+        Time Complexity: O(n^2) to construct the repeated string.
         Space Complexity: O(n^2) to store the result.
 
     Examples:
