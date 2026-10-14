@@ -1,28 +1,37 @@
-def user_compare(name_a, id_a, name_b, id_b):
+"""AP-1: user_compare problem solution."""
+
+
+def user_compare(name_a: str, id_a: int, name_b: str, id_b: int) -> int:
+    """Compare two users, ordering first by name and then by ID.
+
+    Return -1 if user A comes before user B, 1 if user A comes after user B,
+    and 0 if they are identical.
+
+    Args:
+        name_a: Name of user A.
+        id_a: ID of user A.
+        name_b: Name of user B.
+        id_b: ID of user B.
+
+    Returns:
+        -1, 1, or 0 according to user comparison order.
+
+    Complexity:
+        Time Complexity: O(min(len(name_a), len(name_b)))
+        Space Complexity: O(1) auxiliary space.
+
+    Examples:
+        >>> user_compare("bb", 1, "zz", 2)
+        -1
+        >>> user_compare("bb", 1, "aa", 2)
+        1
+        >>> user_compare("bb", 1, "bb", 1)
+        0
     """
-    We have data for two users, A and B, each with a String name and an int id. The goal is to order the users such as for sorting. Return -1 if A comes before B, 1 if A comes after B, and 0 if they are the same. Order first by the string names, and then by the id numbers if the names are the same. Note: with Strings str1.compareTo(str2) returns an int value which is negative/0/positive to indicate how str1 is ordered to str2 (the value is not limited to -1/0/1). (On the AP, there would be two User objects, but here the code simply takes the two strings and two ints directly. The code logic is the same.)
+    return (name_a > name_b) - (name_a < name_b) or (id_a > id_b) - (id_a < id_b)
 
 
-    user_compare("bb", 1, "zz", 2) → -1
-    user_compare("bb", 1, "aa", 2) → 1
-    user_compare("bb", 1, "bb", 1) → 0
-    """
-
-    if name_a < name_b:
-        return -1
-
-    if name_a > name_b:
-        return 1
-
-    if id_a < id_b:
-        return -1
-
-    if id_a > id_b:
-        return 1
-
-    return 0
-
-
-print(user_compare("bb", 1, "zz", 2))
-print(user_compare("bb", 1, "aa", 2))
-print(user_compare("bb", 1, "bb", 1))
+if __name__ == "__main__":
+    print(user_compare("bb", 1, "zz", 2))
+    print(user_compare("bb", 1, "aa", 2))
+    print(user_compare("bb", 1, "bb", 1))
