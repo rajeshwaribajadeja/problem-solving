@@ -2,7 +2,7 @@
 
 
 def without_string(base: str, remove: str) -> str:
-    """Remove all non-overlapping instances of remove from base (case-insensitive).
+    """Remove instances of remove from base case-insensitively.
 
     Given two strings, base and remove, return a version of the base
     string where all instances of the remove string have been removed
@@ -35,7 +35,11 @@ def without_string(base: str, remove: str) -> str:
     rem_lower = remove.lower()
 
     while i < len(base):
-        if i + rem_len <= len(base) and base[i:i + rem_len].lower() == rem_lower:
+        match = (
+            i + rem_len <= len(base)
+            and base[i:i + rem_len].lower() == rem_lower
+        )
+        if match:
             i += rem_len
         else:
             result.append(base[i])
