@@ -27,7 +27,11 @@ def get_sandwich(s: str) -> str:
         >>> get_sandwich("xxbreadyy")
         ''
     """
-    return s[s.find("bread") + 5:s.rfind("bread")] if s.count("bread") >= 2 else ""
+    return (
+        s[s.find("bread") + 5:s.rfind("bread")]
+        if s.count("bread") >= 2
+        else ""
+    )
 
 if __name__ == "__main__":
     print(get_sandwich("breadjambread"))
