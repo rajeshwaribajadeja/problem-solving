@@ -1,13 +1,33 @@
-def group_sum(start, nums, target):
+"""Recursion-2: group_sum problem solution."""
+
+
+def group_sum(start: int, nums: list, target: int) -> bool:
+    """Return True if a subset of nums starting at index sums to target.
+
+    Given an array of ints, determine if it is possible to choose a
+    group of some of the ints such that the group sums to the given
+    target using recursive backtracking.
+
+    Args:
+        start: Starting index in nums.
+        nums: List of integers.
+        target: Target sum.
+
+    Returns:
+        True if a group sums to target, False otherwise.
+
+    Complexity:
+        Time Complexity: O(2^n) in the worst case where n is len(nums).
+        Space Complexity: O(n) auxiliary space for recursion call stack.
+
+    Examples:
+        >>> group_sum(0, [2, 4, 8], 10)
+        True
+        >>> group_sum(0, [2, 4, 8], 14)
+        True
+        >>> group_sum(0, [2, 4, 8], 9)
+        False
     """
-    Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target? This is a classic backtracking recursion problem. Once you understand the recursive backtracking strategy in this problem, you can use the same pattern for many problems to search a space of choices. Rather than looking at the whole array, our convention is to consider the part of the array starting at index start and continuing to the end of the array. The caller can specify the whole array simply by passing start as 0. No loops are needed -- the recursive calls progress down the array.
-
-
-    group_sum(0, [2, 4, 8], 10) → True
-    group_sum(0, [2, 4, 8], 14) → True
-    group_sum(0, [2, 4, 8], 9) → False
-    """
-
     if start == len(nums):
         return target == 0
 
@@ -17,6 +37,7 @@ def group_sum(start, nums, target):
     return group_sum(start + 1, nums, target)
 
 
-print(group_sum(0, [2, 4, 8], 10))
-print(group_sum(0, [2, 4, 8], 14))
-print(group_sum(0, [2, 4, 8], 9))
+if __name__ == "__main__":
+    print(group_sum(0, [2, 4, 8], 10))
+    print(group_sum(0, [2, 4, 8], 14))
+    print(group_sum(0, [2, 4, 8], 9))
